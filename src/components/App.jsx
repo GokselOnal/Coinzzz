@@ -10,7 +10,6 @@ function App(){
       <Header />
       <Sign_in />
       <Footer />
-      <h1>asdasd</h1>
     </div>
   );
 }
