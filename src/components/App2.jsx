@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Register from "./Register";
 
-function App(){
+function App2(){
   return(
     <div>
       <Header />

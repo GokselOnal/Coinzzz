@@ -5,7 +5,7 @@ const coins = [
     name: "Göksel Coin",
     sell_price: "10",
     buy_price: "15",
-    img: "goksel_coin.png",
+    img: "./goksel_coin.png",
     description: "Göksel coin is a cryptocurrency that is produced by business man from Samsun, Turkey. Coin's name comes from the name of its owner. Göksel coin challenges the wall street with its rapidly rising and increasing value. Current value of this coin is ₺15 but after a year, according to estimations, its value will be a million turkish liras."
   },
   {
@@ -30,7 +30,7 @@ const coins = [
     sell_price: "7",
     buy_price: "9",
     img: "deniz_coin.png",
-    description: "Berk coin is a coin that was personally implemented by Berk Akidil. This coin is a coin inspired by the Binance site, hence the bnb. The abbreviation of this coin is brk. This coin, which was launched on April 25, 2021, has received intense interest since the day it was released.It is seen as one of the most robust and valuable coins of the future.With the development of the Coinzzz site, as in bnb, the brk coin will show the necessary development over time."
+    description: "Deniz coin is the cryptocurrency of a marine company that provides logistics services at many points around the world. Deniz coin, which reveals many innovations in the field of cryptocurrency as well as in the field of logistics, is on the list of the best purchases of recent times for many people"
   }
 ];
 
