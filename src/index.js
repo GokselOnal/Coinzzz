@@ -3,17 +3,23 @@ import ReactDOM from 'react-dom';
 import App from "./components/App"
 import App3 from "./components/App3"
 import App4 from "./components/App4"
-import GokselCoin from "./components/GokselCoin"
-import BerkCoin from "./components/BerkCoin"
-import NurettinCoin from "./components/NurettinCoin"
-import DenizCoin from "./components/DenizCoin"
+import Coinpage from "./components/Coinpage"
+import coins from "./coins"
 
 ReactDOM.render(
   <div>
-  <GokselCoin />
-  <BerkCoin />
-  <NurettinCoin />
-  <DenizCoin />
+    <Coinpage
+    description={coins[0].description}
+    />
+    <Coinpage
+    description={coins[1].description}
+    />
+    <Coinpage
+    description={coins[1].description}
+    />
+    <Coinpage
+    description={coins[1].description}
+    />
   </div>,
   document.getElementById('login')
 );
