@@ -1,6 +1,6 @@
 import React from "react";
 
-function Mainpage(){
+function Main(){
   return (
     <div>
       <div class="sidebar">
@@ -149,4 +149,4 @@ function Mainpage(){
 //       </ul>
 //   </div>
 
-export default Mainpage;
+export default Main;

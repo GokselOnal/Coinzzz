@@ -1,6 +1,6 @@
 import React from "react";
 
-function Register(){
+function Registeration(){
   return(
     <div>
       <label for="text_firstname">First Name </label>
@@ -101,4 +101,4 @@ function Register(){
   );
 }
 
-export default Register;
+export default Registeration;
