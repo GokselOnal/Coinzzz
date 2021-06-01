@@ -27,7 +27,7 @@ header h1 {
 
 footer {
   /* position: absolute; */
-  margin-top: 41%;
+  margin-top: 5%;
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -35,6 +35,89 @@ footer {
   /* border: solid 5px; */
 }
 
+button:hover{
+  transition: 0.65s;
+  background-color: #A8D0E6;
+  color: black;
+}
+
 footer p {
   color:  #00363F;
+}
+
+.login{
+  padding: 12% 12%;
+}
+
+.radio_button{
+  margin-top: 22px;
+  margin-left: 5px;
+}
+
+.button_style{
+  width: 200px;
+  margin-top: 15px;
+  text-align: center;
+  text-decoration: none;
+  height: 40px;
+  border-radius: 13px;
+  background-color: #005762;
+  border-style: ridge;
+  border-color: #A8D0E6;
+  color: #A8D0E6;
+  display: inline-block;
+  font-size: 17px;
+  outline: none;
+}
+
+.input_text{
+  text-align: center;
+  width: 250px;
+  line-height: 32px;
+  border-radius: 13px;
+  border-style: solid;
+  border-color: #A8D0E6;
+  outline: none;
+}
+
+.inpt{
+  text-align: left;
+  padding: 1em;
+}
+
+.lab{
+  text-align: right;
+  padding: 1.3em;
+}
+
+.but1{
+  text-align: right;
+}
+
+@media (max-width: 990px) {
+  .lab, .inpt, .but1, .but2, .gender{
+    text-align: center;
+  }
+  .lab{
+    padding-bottom: 0;
+  }
+  .inpt{
+    padding-top: 0;
+    height: 22px;
+  }
+  .but1, .but2{
+     padding: 0;
+  }
+  /* .but_div{
+    margin-top: 25px;
+    border: solid 1px;
+  } */
+  .button_style{
+    width: 260px;
+    margin-top: 20px;
+  }
+
+  .radio_button{
+    margin-top: 0;
+  }
 }

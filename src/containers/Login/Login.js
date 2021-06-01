@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Sign_in from "../../components/Sign_in"
+import Sign_in from "../../components/SignIn"
 
 function Login(){
   return(
