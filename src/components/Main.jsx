@@ -1,5 +1,79 @@
 import React from "react";
+import {Container, Row, Col,Form, FormGroup, Nav, NavItem, NavLink,Button} from "reactstrap"
 
+
+class Main extends React.Component {
+  constructor(props){
+      super(props)
+      this.state = {
+          firstName: '',
+          lastName: '',
+          balance: '',
+          coins: '',
+      };
+      //this.onClick = this.onClick.bind(this);
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault()
+  }
+
+  handleInputChange = e => {
+      this.setState({[e.target.name]: e.target.value})
+  }
+  render(){
+    const{firstName, lastName, email, password, phone} = this.state
+    return(
+      <Container fluid>
+        <Row>
+          <div className="sidebar">
+            <Col className="" lg="7" md="12">
+              <div className="">
+                <label class="label_side" for="user_name">First name</label>
+                <h3 id="user_name"></h3>
+              </div>
+            </Col>
+            <Col className="" lg="7" md="12">
+              <div className="">
+              <label class="label_side" for="last_name">Last name</label>
+              <h3 id="last_name"> </h3>
+              </div>
+            </Col>
+            <Col className="" lg="7" md="12">
+            <div className="">
+              <label class="label_side" for="price">Balance</label>
+              <h3 id="price"> </h3>
+            </div>
+            </Col>
+            <Col className="" lg="7" md="12">
+            <div className="">
+              <label class="label_side" for="coins">Coins owned</label>
+              <h3 id="coins"> </h3></div>
+            </Col>
+            <Col>
+              <Button className="lala" href="/">Sign Out</Button>
+            </Col>
+          </div>
+          <div className="middle">
+          <Nav>
+            <NavItem className="nav">
+              <NavLink href="/goksel">GokselCoin</NavLink>
+              <NavLink href="/berk">BerkCoin</NavLink>
+              <NavLink href="/nurettin">NurettinCoin</NavLink>
+              <NavLink href="/deniz">DenizCoin</NavLink>
+            </NavItem>
+          </Nav>
+          </div>
+        </Row>
+      </Container>
+    );
+    return this.state
+  }
+}
+export default Main;
+
+
+/*
 function Main(){
   return (
     <div>
@@ -13,33 +87,6 @@ function Main(){
        <label class="label_side" for="coins">Coins owned</label>
        <h3 id="coins"> </h3>
 
-
-       <label for="sellcoin">Gökselcoin GKK</label>
-
-       <input class="sell_number_field" id="sell_number_gokselcoin" type="number" placeholder="amount" min="0" max="100"/>
-       <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_gokselcoin')">Sell</button>
-       <span id="sell_value_gokselcoin">₺10</span>
-
-
-       <label for="sellcoin">Berkcoin BRK</label>
-
-       <input class="sell_number_field" id="sell_number_berkcoin" type="number" placeholder="amount" min="0" max="100"/>
-       <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_berkcoin')">Sell</button>
-       <span id="sell_value_berkcoin">₺20</span>
-
-
-       <label for="sellcoin">Nurettincoin</label>
-
-       <input class="sell_number_field" id="sell_number_nurettincoin" type="number" placeholder="amount" min="0" max="100"/>
-       <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_nurettincoin')">Sell</button>
-       <span id="sell_value_nurettincoin">₺5</span>
-
-
-       <label for="sellcoin">Denizcoin</label>
-
-       <input class="sell_number_field" id="sell_number_denizcoin" type="number" placeholder="amount" min="0" max="100"/>
-       <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_denizcoin')">Sell</button>
-       <span id="sell_value_denizcoin">₺7</span>
 
        <button class="sign_out" type="button" name="button" onclick="sign_out()">Sign Out</button>
 
@@ -65,7 +112,35 @@ function Main(){
     </div>
   );
 }
+*/
 
+//
+// <label for="sellcoin">Gökselcoin GKK</label>
+//
+// <input class="sell_number_field" id="sell_number_gokselcoin" type="number" placeholder="amount" min="0" max="100"/>
+// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_gokselcoin')">Sell</button>
+// <span id="sell_value_gokselcoin">₺10</span>
+//
+//
+// <label for="sellcoin">Berkcoin BRK</label>
+//
+// <input class="sell_number_field" id="sell_number_berkcoin" type="number" placeholder="amount" min="0" max="100"/>
+// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_berkcoin')">Sell</button>
+// <span id="sell_value_berkcoin">₺20</span>
+//
+//
+// <label for="sellcoin">Nurettincoin</label>
+//
+// <input class="sell_number_field" id="sell_number_nurettincoin" type="number" placeholder="amount" min="0" max="100"/>
+// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_nurettincoin')">Sell</button>
+// <span id="sell_value_nurettincoin">₺5</span>
+//
+//
+// <label for="sellcoin">Denizcoin</label>
+//
+// <input class="sell_number_field" id="sell_number_denizcoin" type="number" placeholder="amount" min="0" max="100"/>
+// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_denizcoin')">Sell</button>
+// <span id="sell_value_denizcoin">₺7</span>
 // <div class="middle">
 //     <ul>
 //       <li><img src="../Images/goksel_coin.png" width="20" height="20" alt="göksel_coin">
@@ -148,5 +223,3 @@ function Main(){
 //         </li>
 //       </ul>
 //   </div>
-
-export default Main;

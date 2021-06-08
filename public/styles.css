@@ -1,3 +1,29 @@
+/* .input_text{
+  text-align: center;
+  width: 250px;
+  line-height: 32px;
+  border-radius: 13px;
+  border-style: solid;
+  border-color: #A8D0E6;
+  outline: none;
+} */
+
+.nav{
+  border: 1px solid red;
+}
+.sidebar{
+  margin 0;
+  padding: 0;
+  border: 1px solid red;
+}
+.lala{
+  margin: 20px;
+  width: 130px;
+}
+.form{
+  padding-left: 33%;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -27,13 +53,16 @@ header h1 {
 
 footer {
   /* position: absolute; */
-  margin-top: 5%;
+  margin-top: 16%;
   text-align: center;
   bottom: 0;
   width: 100%;
   height: 2.5rem;
   /* border: solid 5px; */
 }
+
+
+
 
 button:hover{
   transition: 0.65s;
@@ -72,11 +101,12 @@ footer p {
 
 .input_text{
   text-align: center;
+  margin-left: 20px;
   width: 250px;
   line-height: 32px;
   border-radius: 13px;
   border-style: solid;
-  border-color: #A8D0E6;
+  border-color: #gray;
   outline: none;
 }
 
@@ -95,6 +125,9 @@ footer p {
 }
 
 @media (max-width: 990px) {
+  .form{
+    padding-right: 45%;
+  }
   .lab, .inpt, .but1, .but2, .gender{
     text-align: center;
   }
@@ -112,7 +145,7 @@ footer p {
     margin-top: 25px;
     border: solid 1px;
   } */
-  .button_style{
+  /* .button_style{
     width: 260px;
     margin-top: 20px;
   }

@@ -1,6 +1,96 @@
 import React from "react";
-import {Container, Row, Col} from "reactstrap"
+import {Container, Row, Col,Form, FormGroup,Button} from "reactstrap"
 
+class Registeration extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            phone: '',
+        };
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick() {
+        const { firstName, lastName, email, password, phone} = this.state;
+        const product = { firstName, lastName, email, password, phone};
+        this.props.onSubmit(product);
+        //this.props.resetForm()
+    }
+    handleSubmit = (event) => {
+      event.preventDefault()
+    }
+
+    handleInputChange = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
+    render(){
+      const{firstName, lastName, email, password, phone} = this.state
+      return(
+        <Container>
+          <Row>
+            <Form onSubmit={this.handleSubmit} >
+              <Col className="lab" lg="7" md="12">
+                <div className="form">
+                  <label>First Name </label>
+                  <input className="input_text" onChange={e => this.setState({ firstName: e.target.value })} type="text" maxlength="25" required/>
+                </div>
+              </Col>
+              <Col className="lab" lg="7" md="12">
+                <div className="form">
+                  <label>Last Name </label>
+                  <input className="input_text" onChange={e => this.setState({ lastName: e.target.value })} type="text" maxlength="25" required/>
+                </div>
+              </Col>
+              <Col className="lab" lg="7" md="12">
+              <div className="form">
+                <label>E-mail </label>
+                <input className="input_text" onChange={e => this.setState({ email: e.target.value })} type="email" required/>
+              </div>
+              </Col>
+              <Col className="lab" lg="7" md="12">
+              <div className="form">
+                <label>Password </label>
+                <input className="input_text" onChange={e => this.setState({ password: e.target.value })} type="password" minlegth="6" maxlength="25" required />
+              </div>
+              </Col>
+              <Col className="lab" lg="7" md="12">
+              <div className="form">
+                <label>Phone </label>
+                <input className="input_text" onChange={e => this.setState({ phone: e.target.value })} type="text" minlegth="11" maxlength="11" placeholder="(0XXX-XXX-XXXX)" required/>
+              </div>
+              </Col>
+
+              <Col className="but1" lg="6">
+                <div className="form">
+                  <Button outline color="secondary" className="lala" href="/register" onClick={this.onClick}>Register</Button>
+                  <Button className="lala" href="/">Login</Button>
+                </div>
+              </Col>
+            </Form>
+          </Row>
+        </Container>
+      );
+      return this.state
+    }
+  }
+export default Registeration;
+
+
+/*<FormGroup>
+  <Col className="lab" lg="5" md="12"><label>Birthdate</label></Col>
+  <Col className="inpt" lg="7" md="12"><input className="input_text" type="date" max="2003-01-01" required/></Col>
+  <Col className="lab" lg="5" md="12"><label>Gender</label></Col>
+  <Col className="gender"><input className="radio_button" type="radio" id="male" name="gender"/> <label for="male">Male</label></Col>
+  <Col className="gender"><input className="radio_button" type="radio" id="female" name="gender"/> <label for="female">Female</label></Col>
+  <Col className="gender"><input className="radio_button" type="radio" id="other" name="gender"/> <label for="other">Other</label></Col>
+  <Col className="but1" lg="6"><button className="button_style" type="button">Register</button></Col>
+  <Col className="but2" lg="6"><button className="button_style" type="button">Log in</button></Col>*/
+/*
 function Registeration(){
   return(
     <Container>
@@ -25,7 +115,7 @@ function Registeration(){
       <Col className="but2" lg="6"><button className="button_style" type="button" name="button">Log in</button></Col>
     </Row>
     </Container>
-
+*/
     // <div>
     //   <label for="text_firstname">First Name </label>
     //   <input className="input_text" type="text" id="text_firstname" name="" value="" maxlength="25" required/>
@@ -122,7 +212,7 @@ function Registeration(){
   //     </div>
   //   </div>
   // </section>
-  );
-}
-
-export default Registeration;
+//   );
+// }
+//
+// export default Registeration;

@@ -5,7 +5,7 @@ const coins = [
     name: "Göksel Coin",
     sell_price: "10",
     buy_price: "15",
-    img: "./goksel_coin.png",
+    img: "goksel",
     description: "Göksel coin is a cryptocurrency that is produced by business man from Samsun, Turkey. Coin's name comes from the name of its owner. Göksel coin challenges the wall street with its rapidly rising and increasing value. Current value of this coin is ₺15 but after a year, according to estimations, its value will be a million turkish liras."
   },
   {

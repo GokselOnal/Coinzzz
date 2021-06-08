@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch, Button} from 'react-router-dom'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import Login from "./containers/Login/Login"
@@ -14,7 +14,6 @@ import DenizCoin from "./containers/Coins/DenizCoin"
 import Notfound from './containers/Notfound/Notfound'
 
 ReactDOM.render(
-  <div>
   <div>
     <Header />
     <BrowserRouter>
@@ -30,8 +29,7 @@ ReactDOM.render(
       </Switch>
      </BrowserRouter>
      <Footer />
-   </div>
-  </div>,
+   </div>,
   document.getElementById('root')
 );
 
