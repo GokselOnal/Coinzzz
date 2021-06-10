@@ -6,9 +6,10 @@ import coins from "../../coins"
 function BerkCoin(){
   return(
     <Coinpage
-    name={coins[1].name}
-    buy_price={coins[1].buy_price}
-    description={coins[1].description}
+      name={coins[1].name}
+      buy_price={coins[1].buy_price}
+      img={coins[1].img}
+      description={coins[1].description}
     />
   );
 }

@@ -5,8 +5,8 @@ const current_year = new Date().getFullYear();
 function Footer(){
   return(
     <footer>
-      <p>Copyright ©{current_year}</p>
-      <p>Göksel Önal</p>
+      <p className="copyright">Copyright ©{current_year} </p>
+      <p className="name">Göksel Önal</p>
     </footer>
   );
 }

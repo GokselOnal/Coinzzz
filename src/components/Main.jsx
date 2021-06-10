@@ -1,10 +1,15 @@
 import React from "react";
 import {Container, Row, Col,Form, FormGroup, Nav, NavItem, NavLink,Button} from "reactstrap"
+import axios from 'axios';
+import Sign_in from "../components/SignIn"
+
+const api = axios.create({baseURL: `http://localhost:3000/users`});
 
 
 class Main extends React.Component {
   constructor(props){
       super(props)
+      //this.getProducts()
       this.state = {
           firstName: '',
           lastName: '',
@@ -13,6 +18,26 @@ class Main extends React.Component {
       };
       //this.onClick = this.onClick.bind(this);
   }
+
+  componentDidMount() {
+    this.getProducts();
+  }
+
+  getProducts = () => {
+    api.get('/').then(res => {
+      const productList = res.data;
+      this.setState({ productList });
+      var input_email = sessionStorage.getItem("email")
+      var coins = null
+      for(var i = 0; i < this.state.productList.length; i++){
+        if(this.state.productList[i]["email"] == input_email){
+          this.setState({ firstName: this.state.productList[i]["firstName"] })
+          this.setState({ lastName: this.state.productList[i]["lastName"]})
+          //balance = this.state.productList[i]["email"]
+        }
+      }
+   })
+ }
 
   handleSubmit = (event) => {
     event.preventDefault()
@@ -24,202 +49,64 @@ class Main extends React.Component {
   render(){
     const{firstName, lastName, email, password, phone} = this.state
     return(
-      <Container fluid>
-        <Row>
-          <div className="sidebar">
-            <Col className="" lg="7" md="12">
+      <div style={{backgroundColor: "#d5d5d5"}}>
+        <Container fluid>
+          <Row>
+            <div className="sidebar">
+              <Col className="" lg="7" md="12">
+                <div className="">
+                  <label class="label_side" for="user_name">First name</label>
+                  <h5>{this.state.firstName}</h5>
+                </div>
+              </Col>
+              <Col className="" lg="7" md="12">
+                <div className="">
+                <label class="label_side" for="last_name">Last name</label>
+                <h5>{this.state.lastName}</h5>
+                </div>
+              </Col>
+              <Col className="" lg="7" md="12">
               <div className="">
-                <label class="label_side" for="user_name">First name</label>
-                <h3 id="user_name"></h3>
+                <label class="label_side" for="price">Balance</label>
+                <h3 id="price"> </h3>
               </div>
-            </Col>
-            <Col className="" lg="7" md="12">
+              </Col>
+              <Col className="" lg="7" md="12">
               <div className="">
-              <label class="label_side" for="last_name">Last name</label>
-              <h3 id="last_name"> </h3>
-              </div>
-            </Col>
-            <Col className="" lg="7" md="12">
-            <div className="">
-              <label class="label_side" for="price">Balance</label>
-              <h3 id="price"> </h3>
+                <label class="label_side" for="coins">Coins owned</label>
+                <h3 id="coins"> </h3></div>
+              </Col>
+              <Col>
+                <Button className="lala" href="/">Sign Out</Button>
+              </Col>
             </div>
-            </Col>
-            <Col className="" lg="7" md="12">
-            <div className="">
-              <label class="label_side" for="coins">Coins owned</label>
-              <h3 id="coins"> </h3></div>
-            </Col>
-            <Col>
-              <Button className="lala" href="/">Sign Out</Button>
-            </Col>
-          </div>
-          <div className="middle">
-          <Nav>
-            <NavItem className="nav">
-              <NavLink href="/goksel">GokselCoin</NavLink>
-              <NavLink href="/berk">BerkCoin</NavLink>
-              <NavLink href="/nurettin">NurettinCoin</NavLink>
-              <NavLink href="/deniz">DenizCoin</NavLink>
-            </NavItem>
-          </Nav>
-          </div>
-        </Row>
-      </Container>
+            <div className="middle">
+            <Nav className="navs">
+              <NavItem className="nav">
+                <NavLink href="/goksel">
+                  <img className="nav_img" src="./Images/goksel_coin.png" width="60" height="60" alt="göksel_coin"/>
+                  Goksel Coin
+                </NavLink>
+                <NavLink href="/berk">
+                  <img className="nav_img" src="./Images/berk_coin.png" width="50" height="50"alt="berk_coin"/>
+                  Berk Coin
+                </NavLink>
+                <NavLink href="/nurettin">
+                  <img className="nav_img" src="./Images/nurettin_coin.png" alt="nurettin_coin" width="50" height="50"/>
+                  Nurettin Coin
+                </NavLink>
+                <NavLink href="/deniz">
+                  <img className="nav_img" src="./Images/deniz_coin.png"  alt="deniz_coin" width="50" height="50"/>
+                  Deniz Coin
+                </NavLink>
+              </NavItem>
+            </Nav>
+            </div>
+          </Row>
+        </Container>
+      </div>
     );
     return this.state
   }
 }
 export default Main;
-
-
-/*
-function Main(){
-  return (
-    <div>
-      <div class="sidebar">
-      <label class="label_side" for="user_name">First name</label>
-       <h3 id="user_name"></h3>
-       <label class="label_side" for="last_name">Last name</label>
-       <h3 id="last_name"> </h3>
-       <label class="label_side" for="price">Balance</label>
-       <h3 id="price"> </h3>
-       <label class="label_side" for="coins">Coins owned</label>
-       <h3 id="coins"> </h3>
-
-
-       <button class="sign_out" type="button" name="button" onclick="sign_out()">Sign Out</button>
-
-      </div>
-      <div className="middle">
-        <input class="number_field" id="buy_number_gokselcoin" type="number" placeholder="amount" min="0" max="100"/>
-        <button type="button" name="buy_coin" id="buy_button_gokselcoin" onclick="buy_coins('buy_number_gokselcoin')">Buy</button>
-        <span id="buy_value_gokselcoin">₺15</span>
-
-        <input class="number_field" id="buy_number_berkcoin" type="number" placeholder="amount" min="0" max="100"/>
-        <button type="button" name="buy_coin" id="buy_button_berkcoin" onclick="buy_coins('buy_number_berkcoin')">Buy</button>
-        <span id="buy_value_berkcoin">₺25</span>
-
-
-        <input class="number_field" id="buy_number_nurettincoin" type="number" placeholder="amount" min="0" max="100"/>
-        <button type="button" name="buy_coin" id="buy_button_nurettincoin" onclick="buy_coins('buy_number_nurettincoin')">Buy</button>
-        <span id="buy_value_nurettincoin">₺7</span>
-
-        <input class="number_field" id="buy_number_denizcoin" type="number" placeholder="amount" min="0" max="100"/>
-        <button type="button" name="buy_coin" id="buy_button_denizcoin" onclick="buy_coins('buy_number_denizcoin')">Buy</button>
-        <span id="buy_value_denizcoin">₺9</span>
-      </div>
-    </div>
-  );
-}
-*/
-
-//
-// <label for="sellcoin">Gökselcoin GKK</label>
-//
-// <input class="sell_number_field" id="sell_number_gokselcoin" type="number" placeholder="amount" min="0" max="100"/>
-// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_gokselcoin')">Sell</button>
-// <span id="sell_value_gokselcoin">₺10</span>
-//
-//
-// <label for="sellcoin">Berkcoin BRK</label>
-//
-// <input class="sell_number_field" id="sell_number_berkcoin" type="number" placeholder="amount" min="0" max="100"/>
-// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_berkcoin')">Sell</button>
-// <span id="sell_value_berkcoin">₺20</span>
-//
-//
-// <label for="sellcoin">Nurettincoin</label>
-//
-// <input class="sell_number_field" id="sell_number_nurettincoin" type="number" placeholder="amount" min="0" max="100"/>
-// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_nurettincoin')">Sell</button>
-// <span id="sell_value_nurettincoin">₺5</span>
-//
-//
-// <label for="sellcoin">Denizcoin</label>
-//
-// <input class="sell_number_field" id="sell_number_denizcoin" type="number" placeholder="amount" min="0" max="100"/>
-// <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_denizcoin')">Sell</button>
-// <span id="sell_value_denizcoin">₺7</span>
-// <div class="middle">
-//     <ul>
-//       <li><img src="../Images/goksel_coin.png" width="20" height="20" alt="göksel_coin">
-//         <a href="goksel_coin.html">Gökselcoin GKK</a><br>
-//         <input class="number_field" id="buy_number_gokselcoin" type="number" placeholder="amount" min="0" max="100">
-//         <button type="button" name="buy_coin" id="buy_button_gokselcoin" onclick="buy_coins('buy_number_gokselcoin')">Buy</button>
-//         <span id="buy_value_gokselcoin">₺15</span>
-//         <hr>
-//       </li>
-//       <br>
-//       <li><img src="../Images/smallberk_coin.png"  alt="berk_coin">
-//         <a href="berk_coin.html">Berkcoin BRK</a><br>
-//         <input class="number_field" id="buy_number_berkcoin" type="number" placeholder="amount" min="0" max="100">
-//         <button type="button" name="buy_coin" id="buy_button_berkcoin" onclick="buy_coins('buy_number_berkcoin')">Buy</button>
-//         <span id="buy_value_berkcoin">₺25</span>
-//         <hr>
-//       </li>
-//       <br>
-//       <li><img src="../Images/nurettin_coin.png"  alt="nurettin_coin" width="20" height="20">
-//         <a href="nurettin_coin.html">Nurettin Coin</a><br>
-//         <input class="number_field" id="buy_number_nurettincoin" type="number" placeholder="amount" min="0" max="100">
-//         <button type="button" name="buy_coin" id="buy_button_nurettincoin" onclick="buy_coins('buy_number_nurettincoin')">Buy</button>
-//         <span id="buy_value_nurettincoin">₺7</span>
-//         <hr>
-//       </li>
-//       <br>
-//       <li><img src="../Images/deniz_coin.png"  alt="deniz_coin" width="20" height="20">
-//         <a href="deniz_coin.html">Deniz Coin</a><br>
-//         <input class="number_field" id="buy_number_denizcoin" type="number" placeholder="amount" min="0" max="100">
-//         <button type="button" name="buy_coin" id="buy_button_denizcoin" onclick="buy_coins('buy_number_denizcoin')">Buy</button>
-//         <span id="buy_value_denizcoin">₺9</span>
-//         <hr>
-//       </li>
-//     </ul>
-
-// <div class="sidebar">
-//     <label class="label_side" for="user_name">First name</label>
-//     <h3 id="user_name">
-//       </h2>
-//       <label class="label_side" for="last_name">Last name</label>
-//       <h3 id="last_name"> </h3>
-//       <label class="label_side" for="price">Balance</label>
-//       <h3 id="price"> </h3>
-//       <label class="label_side" for="coins">Coins owned</label>
-//       <h3 id="coins"> </h3>
-//       <ul>
-//         <li><img src="../Images/goksel_coin.png" width="20" height="20" alt="göksel_coin">
-//           <label for="sellcoin">Gökselcoin GKK</label>
-//           <br>
-//           <input class="sell_number_field" id="sell_number_gokselcoin" type="number" placeholder="amount" min="0" max="100">
-//           <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_gokselcoin')">Sell</button>
-//           <span id="sell_value_gokselcoin">₺10</span>
-//         </li>
-//         <br>
-//         <li><img src="../Images/smallberk_coin.png"  alt="berk_coin">
-//           <label for="sellcoin">Berkcoin BRK</label>
-//           <br>
-//           <input class="sell_number_field" id="sell_number_berkcoin" type="number" placeholder="amount" min="0" max="100">
-//           <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_berkcoin')">Sell</button>
-//           <span id="sell_value_berkcoin">₺20</span>
-//         </li>
-//         <br>
-//         <li><img src="../Images/nurettin_coin.png"  alt="nurettin_coin" width="20" height="20">
-//           <label for="sellcoin">Nurettincoin</label>
-//           <br>
-//           <input class="sell_number_field" id="sell_number_nurettincoin" type="number" placeholder="amount" min="0" max="100">
-//           <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_nurettincoin')">Sell</button>
-//           <span id="sell_value_nurettincoin">₺5</span>
-//         </li>
-//         <br>
-//         <li><img src="../Images/deniz_coin.png"  alt="deniz_coin" width="20" height="20">
-//           <label for="sellcoin">Denizcoin</label>
-//           <br>
-//           <input class="sell_number_field" id="sell_number_denizcoin" type="number" placeholder="amount" min="0" max="100">
-//           <button class="sell_button" type="button" name="button" onclick="sell_coins('sell_number_denizcoin')">Sell</button>
-//           <span id="sell_value_denizcoin">₺7</span>
-//         </li>
-//         <li>
-//           <button class="sign_out" type="button" name="button" onclick="sign_out()">Sign Out</button>
-//         </li>
-//       </ul>
-//   </div>

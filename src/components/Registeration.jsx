@@ -31,49 +31,50 @@ class Registeration extends React.Component {
     render(){
       const{firstName, lastName, email, password, phone} = this.state
       return(
-        <Container>
-          <Row>
-            <Form onSubmit={this.handleSubmit} >
-              <Col className="lab" lg="7" md="12">
+        <div style={{backgroundColor: "#d5d5d5"}}>
+          <Container>
+            <Row>
+              <Form className="form_reg" onSubmit={this.handleSubmit} >
+                <Col className="lab" lg="7" md="12">
+                  <div className="form">
+                    <label>First Name </label>
+                    <input className="input_text" onChange={e => this.setState({ firstName: e.target.value })} type="text" maxlength="25" required/>
+                  </div>
+                </Col>
+                <Col className="lab" lg="7" md="12">
+                  <div className="form">
+                    <label>Last Name </label>
+                    <input className="input_text" onChange={e => this.setState({ lastName: e.target.value })} type="text" maxlength="25" required/>
+                  </div>
+                </Col>
+                <Col className="lab" lg="7" md="12">
                 <div className="form">
-                  <label>First Name </label>
-                  <input className="input_text" onChange={e => this.setState({ firstName: e.target.value })} type="text" maxlength="25" required/>
+                  <label>E-mail </label>
+                  <input className="input_text" onChange={e => this.setState({ email: e.target.value })} type="email" required/>
                 </div>
-              </Col>
-              <Col className="lab" lg="7" md="12">
+                </Col>
+                <Col className="lab" lg="7" md="12">
                 <div className="form">
-                  <label>Last Name </label>
-                  <input className="input_text" onChange={e => this.setState({ lastName: e.target.value })} type="text" maxlength="25" required/>
+                  <label>Password </label>
+                  <input className="input_text" onChange={e => this.setState({ password: e.target.value })} type="password" minlegth="6" maxlength="25" required />
                 </div>
-              </Col>
-              <Col className="lab" lg="7" md="12">
-              <div className="form">
-                <label>E-mail </label>
-                <input className="input_text" onChange={e => this.setState({ email: e.target.value })} type="email" required/>
-              </div>
-              </Col>
-              <Col className="lab" lg="7" md="12">
-              <div className="form">
-                <label>Password </label>
-                <input className="input_text" onChange={e => this.setState({ password: e.target.value })} type="password" minlegth="6" maxlength="25" required />
-              </div>
-              </Col>
-              <Col className="lab" lg="7" md="12">
-              <div className="form">
-                <label>Phone </label>
-                <input className="input_text" onChange={e => this.setState({ phone: e.target.value })} type="text" minlegth="11" maxlength="11" placeholder="(0XXX-XXX-XXXX)" required/>
-              </div>
-              </Col>
-
-              <Col className="but1" lg="6">
+                </Col>
+                <Col className="lab" lg="7" md="12">
                 <div className="form">
-                  <Button outline color="secondary" className="lala" href="/register" onClick={this.onClick}>Register</Button>
-                  <Button className="lala" href="/">Login</Button>
+                  <label>Phone </label>
+                  <input className="input_text" onChange={e => this.setState({ phone: e.target.value })} type="text" minlegth="11" maxlength="11" placeholder="(0XXX-XXX-XXXX)" required/>
                 </div>
-              </Col>
-            </Form>
-          </Row>
-        </Container>
+                </Col>
+                <Col className="but1" lg="7" md="12">
+                  <div className="form">
+                    <Button outline color="secondary" className="lala" href="/register" onClick={this.onClick}>Register</Button>
+                    <Button className="lala" href="/">Login</Button>
+                  </div>
+                </Col>
+              </Form>
+            </Row>
+          </Container>
+        </div>
       );
       return this.state
     }
