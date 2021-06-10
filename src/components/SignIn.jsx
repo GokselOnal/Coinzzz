@@ -39,7 +39,7 @@ class SingIn extends React.Component {
     render(){
       const{email, password} = this.state
       return(
-        <div style={{backgroundColor: "#d5d5d5"}}>
+        <div style={{backgroundColor: "#dfdfdf"}}>
           <h2><i>Welcome to Coinzzz</i></h2>
           <Container className="login">
            <Row>

@@ -14,7 +14,6 @@ class Main extends React.Component {
           firstName: '',
           lastName: '',
           balance: '',
-          coins: '',
       };
       //this.onClick = this.onClick.bind(this);
   }
@@ -33,7 +32,7 @@ class Main extends React.Component {
         if(this.state.productList[i]["email"] == input_email){
           this.setState({ firstName: this.state.productList[i]["firstName"] })
           this.setState({ lastName: this.state.productList[i]["lastName"]})
-          //balance = this.state.productList[i]["email"]
+          this.setState({ balance: this.state.productList[i]["balance"]})
         }
       }
    })
@@ -49,10 +48,10 @@ class Main extends React.Component {
   render(){
     const{firstName, lastName, email, password, phone} = this.state
     return(
-      <div style={{backgroundColor: "#d5d5d5"}}>
+      <div style={{backgroundColor: "#dfdfdf"}}>
         <Container fluid>
           <Row>
-            <div className="sidebar">
+            <div className="sidebar" style={{backgroundColor: "#d3d3d3"}}>
               <Col className="" lg="7" md="12">
                 <div className="">
                   <label class="label_side" for="user_name">First name</label>
@@ -68,16 +67,8 @@ class Main extends React.Component {
               <Col className="" lg="7" md="12">
               <div className="">
                 <label class="label_side" for="price">Balance</label>
-                <h3 id="price"> </h3>
+                <h5>{this.state.balance}</h5>
               </div>
-              </Col>
-              <Col className="" lg="7" md="12">
-              <div className="">
-                <label class="label_side" for="coins">Coins owned</label>
-                <h3 id="coins"> </h3></div>
-              </Col>
-              <Col>
-                <Button className="lala" href="/">Sign Out</Button>
               </Col>
             </div>
             <div className="middle">
@@ -101,6 +92,7 @@ class Main extends React.Component {
                 </NavLink>
               </NavItem>
             </Nav>
+            <Button className="sign_out" href="/">Sign Out</Button>
             </div>
           </Row>
         </Container>

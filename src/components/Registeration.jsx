@@ -31,7 +31,8 @@ class Registeration extends React.Component {
     render(){
       const{firstName, lastName, email, password, phone} = this.state
       return(
-        <div style={{backgroundColor: "#d5d5d5"}}>
+        <div style={{backgroundColor: "#dfdfdf"}}>
+        <h2><i>Register</i></h2>
           <Container>
             <Row>
               <Form className="form_reg" onSubmit={this.handleSubmit} >
