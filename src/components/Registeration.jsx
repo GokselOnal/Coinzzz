@@ -10,6 +10,7 @@ class Registeration extends React.Component {
             email: '',
             password: '',
             phone: '',
+            balance: '200',
         };
         this.onClick = this.onClick.bind(this);
     }
@@ -18,7 +19,6 @@ class Registeration extends React.Component {
         const { firstName, lastName, email, password, phone} = this.state;
         const product = { firstName, lastName, email, password, phone};
         this.props.onSubmit(product);
-        //this.props.resetForm()
     }
     handleSubmit = (event) => {
       event.preventDefault()

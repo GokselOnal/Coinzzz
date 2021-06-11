@@ -10,9 +10,6 @@ class SingIn extends React.Component {
           productList: []
         }
         this.state = {
-          validate: false,
-        }
-        this.state = {
             email: '',
             password: '',
         };
@@ -28,8 +25,12 @@ class SingIn extends React.Component {
           if(this.state.productList[i]["email"] == input_email && this.state.productList[i]["password"] == input_password){
             sessionStorage.setItem("email",input_email)
             window.location.href = "/mainpage"
+            return
           }
         }
+        window.alert("Invalid login\nTry Again");
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
      })
    }
 

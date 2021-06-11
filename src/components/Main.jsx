@@ -9,13 +9,11 @@ const api = axios.create({baseURL: `http://localhost:3000/users`});
 class Main extends React.Component {
   constructor(props){
       super(props)
-      //this.getProducts()
       this.state = {
           firstName: '',
           lastName: '',
           balance: '',
       };
-      //this.onClick = this.onClick.bind(this);
   }
 
   componentDidMount() {
@@ -27,7 +25,6 @@ class Main extends React.Component {
       const productList = res.data;
       this.setState({ productList });
       var input_email = sessionStorage.getItem("email")
-      var coins = null
       for(var i = 0; i < this.state.productList.length; i++){
         if(this.state.productList[i]["email"] == input_email){
           this.setState({ firstName: this.state.productList[i]["firstName"] })
