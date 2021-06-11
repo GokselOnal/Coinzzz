@@ -25,11 +25,7 @@ class Login extends React.Component {
       this.setState({ productList });
    })
  }
- onDelete(id, index) {
-    api.delete(`/${id}`)
-      .then(res => this.getProducts())
-  }
-
+ 
   onAdd(product) {
     api.post(`/`, product)
       .then(res => this.getProducts())

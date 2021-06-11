@@ -1,12 +1,12 @@
-/* .input_text{
-  text-align: center;
-  width: 250px;
-  line-height: 32px;
-  border-radius: 13px;
-  border-style: solid;
-  border-color: #A8D0E6;
-  outline: none;
-} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
 
 h2{
   padding-top: 3%;
@@ -17,14 +17,44 @@ h3{
   text-align: center;
 }
 
+p{
+  padding: 0px 30%;
+}
+
+header {
+  background-color: #00363F;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  background-color: #dfdfdf;
+  padding-bottom: 100px; 
+}
+
+footer p {
+  color:  #00363F;
+}
+
+
 .coin_img {
-  margin-left: 37%;
+  margin-left: 35%;
 }
 
 .form_reg{
-  padding-top: 0;
+  padding-top: 15px;
   margin-left: 70px;
-  padding-bottom: 16%;
+  padding-bottom: 20.6%;
 }
 
 .coin_buy{
@@ -37,17 +67,13 @@ h3{
   margin-bottom: 3.5%;
 }
 
-p{
-  padding: 0px 30%;
-}
-
 .navs{
   margin-left: 32%;
   margin-top: 40px;
   padding-bottom: 120px;
   padding-bottom: 24%;
-
 }
+
 .sidebar{
   margin 0;
   padding: 0;
@@ -56,45 +82,20 @@ p{
   border-left: 0;
   border-style:outset;
 }
+
 .sign_out{
   margin: 17px;
   margin-left: 90%;
   width: 130px;
 }
 
-.lala{
+.buttonSign{
   margin: 20px;
   width: 130px;
-}
-/* .form{
-  padding-left: 33%;
-}*/
-
-header {
-  background-color: #00363F;
-  width: 100%;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-
-}
-html {
-  font-family: "Montserrat", sans-serif;
-}
-body {
-  /*background-color: #dcdcdc;*/
-  /* padding: 0 16px; */
 }
 
 .form_log{
   padding-bottom: 179px;
-  /*border: 1px solid red;*/
   margin-left: 70px;
 }
 
@@ -104,58 +105,15 @@ body {
 
 .name{
   margin-bottom: 5px;
-  /*padding-bottom: 100px;*/
-}
-
-header h1 {
-  color: #fff;
-  font-family: "McLaren", cursive;
-  font-weight: 200;
-}
-
-footer {
-  /* position: absolute; */
-  text-align: center;
-  width: 100%;
-  background-color: #dfdfdf;
-}
-
-
-
-
-/* button:hover{
-  transition: 0.65s;
-  background-color: #A8D0E6;
-  color: black;
-} */
-
-footer p {
-  color:  #00363F;
 }
 
 .login{
   padding: 7%;
 }
 
-.radio_button{
-  margin-top: 22px;
-  margin-left: 5px;
-}
-
-.button_style{
-  width: 200px;
-  margin-top: 15px;
-  text-align: center;
-  text-decoration: none;
-  height: 40px;
-  border-radius: 13px;
-  background-color: #005762;
-  border-style: ridge;
-  border-color: #A8D0E6;
-  color: #A8D0E6;
-  display: inline-block;
-  font-size: 17px;
-  outline: none;
+.main_back_but{
+  margin-left: 46%;
+  margin-bottom: 3.5%;
 }
 
 .input_text{
@@ -167,11 +125,6 @@ footer p {
   border-style: solid;
   border-color: #gray;
   outline: none;
-}
-
-.inpt{
-  text-align: left;
-  padding: 1em;
 }
 
 .lab{
@@ -187,29 +140,35 @@ footer p {
   .form{
     padding-right: 45%;
   }
-  .lab, .inpt, .but1, .but2, .gender{
+  .lab, .but1, .but2{
     text-align: center;
   }
   .lab{
     padding-bottom: 0;
   }
-  .inpt{
-    padding-top: 0;
-    height: 22px;
-  }
   .but1, .but2{
      padding: 0;
   }
-  /* .but_div{
-    margin-top: 25px;
-    border: solid 1px;
-  } */
-  /* .button_style{
-    width: 260px;
-    margin-top: 20px;
+  .buttonSign{
+    width: 180px;
   }
-
-  .radio_button{
-    margin-top: 0;
+  .sign_out{
+    margin-left:0;
+  }
+  .coin_img {
+    width: 280px;
+    height: 280px;
+    margin-left: 35%;
+  }
+  p{
+    padding: 0px 20%;
+  }
+  .main_back_but{
+    margin-left: 42%;
+    margin-bottom: 14%;
+  }
+  footer {
+    padding-top: 5%;
+    padding-bottom: 8%;
   }
 }

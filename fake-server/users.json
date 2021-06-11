@@ -6,24 +6,35 @@
       "lastName": "Onal",
       "email": "can.onal@ozu.edu.tr",
       "balance": "200",
-      "password": "lalala",
-      "phone": "269"
+      "password": "lalala"
     },
     {
       "firstName": "deneme",
       "lastName": "denek",
-      "email": "user_deneme@ozu.edu.tr",
-      "password": "lololo",
-      "phone": "123123",
+      "email": "kikiki",
+      "password": "asdasda",
       "id": 2
     },
     {
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "password": "",
-      "phone": "",
+      "firstName": "deneme",
+      "lastName": "denek",
+      "email": "kikiki",
+      "password": "asdasda",
       "id": 3
+    },
+    {
+      "firstName": "asd",
+      "lastName": "asd",
+      "email": "asd",
+      "password": "asdas",
+      "id": 4
+    },
+    {
+      "firstName": "sadads",
+      "lastName": "asdasd",
+      "email": "laaa",
+      "password": "looo",
+      "id": 5
     }
   ]
 }

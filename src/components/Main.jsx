@@ -35,6 +35,10 @@ class Main extends React.Component {
    })
  }
 
+ clearSession(){
+   sessionStorage.clear()
+ }
+
   handleSubmit = (event) => {
     event.preventDefault()
   }
@@ -89,7 +93,7 @@ class Main extends React.Component {
                 </NavLink>
               </NavItem>
             </Nav>
-            <Button className="sign_out" href="/">Sign Out</Button>
+            <Button className="sign_out" href="/" onClick={this.clearSession}>Sign Out</Button>
             </div>
           </Row>
         </Container>

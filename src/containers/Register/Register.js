@@ -25,11 +25,7 @@ const api = axios.create({baseURL: `http://localhost:3000/users`});
         this.setState({ productList });
      })
    }
-   onDelete(id, index) {
-      api.delete(`/${id}`)
-        .then(res => this.getProducts())
-    }
-
+  
     onAdd(product) {
       api.post(`/`, product)
         .then(res => this.getProducts())

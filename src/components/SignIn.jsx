@@ -59,8 +59,8 @@ class SingIn extends React.Component {
               </Col>
               <Col className="but1" lg="7">
                 <div className="form">
-                <Button outline color="secondary"className="lala" onClick={this.getProducts}>Sing In</Button>
-                <Button className="lala" href="/register">Register</Button>
+                <Button outline color="secondary"className="buttonSign" onClick={this.getProducts}>Sing In</Button>
+                <Button className="buttonSign" href="/register">Register</Button>
                 </div>
               </Col>
             </Form>
