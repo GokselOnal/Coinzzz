@@ -12,7 +12,6 @@ class Main extends React.Component {
       this.state = {
           firstName: '',
           lastName: '',
-          balance: '',
       };
   }
 
@@ -29,7 +28,6 @@ class Main extends React.Component {
         if(this.state.productList[i]["email"] == input_email){
           this.setState({ firstName: this.state.productList[i]["firstName"] })
           this.setState({ lastName: this.state.productList[i]["lastName"]})
-          this.setState({ balance: this.state.productList[i]["balance"]})
         }
       }
    })
@@ -47,7 +45,7 @@ class Main extends React.Component {
       this.setState({[e.target.name]: e.target.value})
   }
   render(){
-    const{firstName, lastName, email, password, phone} = this.state
+    const{firstName, lastName, email, password} = this.state
     return(
       <div style={{backgroundColor: "#dfdfdf"}}>
         <Container fluid>
@@ -64,12 +62,6 @@ class Main extends React.Component {
                 <label class="label_side" for="last_name">Last name</label>
                 <h5>{this.state.lastName}</h5>
                 </div>
-              </Col>
-              <Col className="" lg="7" md="12">
-              <div className="">
-                <label class="label_side" for="price">Balance</label>
-                <h5>{this.state.balance}</h5>
-              </div>
               </Col>
             </div>
             <div className="middle">
