@@ -12,7 +12,6 @@ const api = axios.create({baseURL: `http://localhost:3000/users`});
      this.state = {
        productList: []
      }
-     this.onDelete = this.onDelete.bind(this);
      this.onAdd = this.onAdd.bind(this);
     }
     componentDidMount(){
@@ -25,7 +24,7 @@ const api = axios.create({baseURL: `http://localhost:3000/users`});
         this.setState({ productList });
      })
    }
-  
+
     onAdd(product) {
       api.post(`/`, product)
         .then(res => this.getProducts())

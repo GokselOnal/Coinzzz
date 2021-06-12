@@ -12,7 +12,6 @@ class Login extends React.Component {
    this.state = {
      productList: []
    }
-   this.onDelete = this.onDelete.bind(this);
    this.onAdd = this.onAdd.bind(this);
   }
   componentDidMount(){
@@ -25,7 +24,7 @@ class Login extends React.Component {
       this.setState({ productList });
    })
  }
- 
+
   onAdd(product) {
     api.post(`/`, product)
       .then(res => this.getProducts())
